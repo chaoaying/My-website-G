@@ -1,3 +1,19 @@
+:root {
+  --bg-color: #f0f4f8;
+  --card-bg: #ffffff;
+  --text-color: #102a43;
+  --primary-color: #0b69a3;
+  --hero-bg: #e0f2fe;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: #f8fafc;
+  --primary-color: #38bdf8;
+  --hero-bg: #1e293b;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +23,9 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f0f4f8;
-  color: #102a43;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar {
@@ -16,34 +33,37 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #ffffff;
+  background-color: var(--card-bg);
   position: sticky;
   top: 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
 }
 
 .logo {
   font-weight: bold;
   font-size: 1.2rem;
-  color: #0b69a3;
+  color: var(--primary-color);
 }
 
 .nav-links {
   display: flex;
   list-style: none;
   gap: 1.5rem;
+  align-items: center;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #102a43;
+  color: var(--text-color);
   font-weight: bold;
 }
 
 .hero {
   text-align: center;
   padding: 4rem 1rem;
-  background-color: #e0f2fe;
+  background-color: var(--hero-bg);
+  transition: background-color 0.3s;
 }
 
 .hero h1 {
@@ -59,7 +79,7 @@ body {
 }
 
 .container h2 {
-  color: #0b69a3;
+  color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
@@ -71,7 +91,7 @@ body {
 }
 
 .skill-badge {
-  background-color: #0b69a3;
+  background-color: var(--primary-color);
   color: #ffffff;
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -79,10 +99,11 @@ body {
 }
 
 .project-card {
-  background-color: #ffffff;
+  background-color: var(--card-bg);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  transition: background-color 0.3s;
 }
 
 .btn {
@@ -92,10 +113,12 @@ body {
   text-decoration: none;
   margin-top: 1rem;
   font-weight: bold;
+  border: none;
+  cursor: pointer;
 }
 
 .primary-btn {
-  background-color: #0b69a3;
+  background-color: var(--primary-color);
   color: #ffffff;
 }
 
@@ -106,5 +129,3 @@ footer {
   color: #ffffff;
   margin-top: 3rem;
 }
-
-.hero-img { width: 150px; border-radius: 50%; margin-top: 1rem; }
